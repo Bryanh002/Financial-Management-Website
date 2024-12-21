@@ -1,0 +1,9 @@
+# Stage 2: Build Python dependencies
+FROM python:3.12.2
+WORKDIR /app
+RUN python -m pip install requests flask flask-cors plaid-python
+COPY server.py .
+
+EXPOSE 5000
+
+CMD ["python3", "server.py"]
